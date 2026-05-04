@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Real Solutions — Enterprise Data Consulting</title>
+<title>Bivonix — Enterprise Data Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* ──────────────────────────────────────────
-   RESET + ROOT
-────────────────────────────────────────── */
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --black:#090909;
@@ -34,15 +31,10 @@ body{
   overflow-x:hidden;
   line-height:1.6;
 }
-
-/* ── CURSOR ── */
 #cur,#ring{position:fixed;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);}
 #cur{width:10px;height:10px;background:var(--gold);mix-blend-mode:difference;transition:transform 0.1s;}
 #ring{width:36px;height:36px;border:1px solid var(--gold);opacity:0.5;transition:transform 0.12s ease-out;}
 body:hover #cur{display:block;}
-a:hover~#cur,button:hover~#cur{transform:translate(-50%,-50%) scale(2);}
-
-/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;
   display:flex;justify-content:space-between;align-items:center;
@@ -52,186 +44,59 @@ nav{
 }
 .nav-logo-wrap{display:flex;align-items:center;}
 .nav-links{display:flex;gap:32px;}
-.nav-links a{
-  font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--white);text-decoration:none;
-  transition:color 0.2s;
-}
+.nav-links a{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:var(--gold);}
-.nav-book{
-  font-size:9px;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--black);background:var(--white);
-  padding:10px 22px;text-decoration:none;
-  transition:background 0.2s,color 0.2s;
-}
+.nav-book{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--white);padding:10px 22px;text-decoration:none;transition:background 0.2s,color 0.2s;}
 .nav-book:hover{background:var(--gold);color:var(--black);}
-
-/* ── HERO ── */
-.hero{
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  position:relative;overflow:hidden;
-}
-.hero-left{
-  display:flex;flex-direction:column;
-  justify-content:flex-end;
-  padding:120px 56px 80px;
-  position:relative;z-index:2;
-}
-.hero-eyebrow{
-  font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:20px;
-  display:flex;align-items:center;gap:12px;
-  opacity:0;animation:fadeUp 0.8s 0.3s forwards;
-}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 56px 80px;position:relative;z-index:2;}
+.hero-eyebrow{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
-h1.hero-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(72px,9.5vw,148px);
-  line-height:0.87;
-  letter-spacing:0.025em;
-  margin-bottom:0;
-  opacity:0;animation:fadeUp 0.9s 0.5s forwards;
-}
-h1.hero-title em{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:0.68em;
-  display:block;
-  color:var(--gold);
-  letter-spacing:0;
-  line-height:1.05;
-  margin-top:-4px;
-}
-.hero-desc{
-  margin-top:36px;
-  font-size:11px;line-height:2;
-  color:var(--dimmer);
-  max-width:400px;
-  opacity:0;animation:fadeUp 0.8s 0.7s forwards;
-}
+h1.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,9.5vw,148px);line-height:0.87;letter-spacing:0.025em;margin-bottom:0;opacity:0;animation:fadeUp 0.9s 0.5s forwards;}
+h1.hero-title em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.68em;display:block;color:var(--gold);letter-spacing:0;line-height:1.05;margin-top:-4px;}
+.hero-desc{margin-top:36px;font-size:11px;line-height:2;color:var(--dimmer);max-width:400px;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
 .hero-desc strong{color:var(--dim);font-weight:400;}
-.hero-actions{
-  margin-top:44px;
-  display:flex;gap:14px;align-items:center;
-  opacity:0;animation:fadeUp 0.8s 0.9s forwards;
-}
-.btn-gold{
-  padding:14px 32px;background:var(--gold);color:var(--black);
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
-  text-decoration:none;transition:all 0.2s;
-}
+.hero-actions{margin-top:44px;display:flex;gap:14px;align-items:center;opacity:0;animation:fadeUp 0.8s 0.9s forwards;}
+.btn-gold{padding:14px 32px;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
 .btn-gold:hover{background:var(--white);}
-.btn-ghost{
-  padding:14px 28px;border:1px solid rgba(240,235,228,0.25);
-  color:var(--white);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;
-  text-decoration:none;transition:all 0.2s;
-}
+.btn-ghost{padding:14px 28px;border:1px solid rgba(240,235,228,0.25);color:var(--white);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-
 .hero-right{position:relative;overflow:hidden;}
-.hero-img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;
-  filter:sepia(10%) contrast(1.12) brightness(0.88);
-  opacity:0;animation:fadeIn 1.4s 0.2s forwards;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,var(--black) 0%,transparent 30%);
-}
-.hero-ghost-text{
-  position:absolute;bottom:24px;right:24px;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:120px;line-height:1;
-  color:rgba(200,169,110,0.04);
-  letter-spacing:0.05em;pointer-events:none;
-}
-
-/* HERO RATE BADGE */
-.hero-rate{
-  position:absolute;top:50%;right:56px;
-  transform:translateY(-50%);
-  background:rgba(9,9,9,0.9);
-  border:1px solid var(--rule);
-  border-top:2px solid var(--gold);
-  padding:28px 32px;
-  min-width:220px;
-  z-index:3;
-  opacity:0;animation:fadeUp 0.8s 1.1s forwards;
-}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:sepia(10%) contrast(1.12) brightness(0.88);opacity:0;animation:fadeIn 1.4s 0.2s forwards;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--black) 0%,transparent 30%);}
+.hero-ghost-text{position:absolute;bottom:24px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:1;color:rgba(200,169,110,0.04);letter-spacing:0.05em;pointer-events:none;}
+.hero-rate{position:absolute;top:50%;right:56px;transform:translateY(-50%);background:rgba(9,9,9,0.9);border:1px solid var(--rule);border-top:2px solid var(--gold);padding:28px 32px;min-width:220px;z-index:3;opacity:0;animation:fadeUp 0.8s 1.1s forwards;}
 .rate-label{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dimmer);margin-bottom:6px;}
-.rate-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:52px;line-height:1;color:var(--white);
-  letter-spacing:0.03em;
-}
+.rate-num{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;color:var(--white);letter-spacing:0.03em;}
 .rate-unit{font-size:10px;color:var(--dimmer);letter-spacing:0.1em;}
 .rate-hr{height:1px;background:var(--rule);margin:16px 0;}
 .rate-row{display:flex;justify-content:space-between;padding:5px 0;font-size:9px;}
 .rate-row-k{color:var(--dimmer);}
 .rate-row-v{color:var(--white);}
-.rate-avail{
-  margin-top:14px;
-  font-size:8px;letter-spacing:0.16em;text-transform:uppercase;
-  color:rgba(34,197,94,0.7);
-  display:flex;align-items:center;gap:6px;
-}
+.rate-avail{margin-top:14px;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(34,197,94,0.7);display:flex;align-items:center;gap:6px;}
 .rate-avail::before{content:'';width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0;}
-
-/* ── MARQUEE ── */
 .marquee-wrap{background:var(--gold);padding:13px 0;overflow:hidden;white-space:nowrap;}
 .marquee-track{display:inline-flex;animation:marquee 22s linear infinite;}
-.m-item{
-  font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.18em;
-  color:var(--black);padding:0 32px;
-}
+.m-item{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.18em;color:var(--black);padding:0 32px;}
 .m-dot{color:rgba(9,9,9,0.35);}
-
-/* ── STATS ── */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);}
 .stat{padding:44px 48px;border-right:1px solid var(--rule);}
 .stat:last-child{border-right:none;}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:1;color:var(--gold);}
 .stat-lbl{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--dimmer);margin-top:6px;}
-
-/* ── CLIENT STRIP ── */
-.client-strip{
-  display:flex;align-items:center;padding:20px 56px;
-  border-bottom:1px solid var(--rule);
-  background:var(--black2);
-}
+.client-strip{display:flex;align-items:center;padding:20px 56px;border-bottom:1px solid var(--rule);background:var(--black2);}
 .cs-lbl{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dimmer);white-space:nowrap;padding-right:32px;margin-right:32px;border-right:1px solid var(--rule);}
 .cs-names{display:flex;gap:0;flex:1;flex-wrap:wrap;}
 .cs-n{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--dimmer);padding:0 24px;border-right:1px solid var(--rule);}
 .cs-n:last-child{border-right:none;}
 .cs-n:hover{color:var(--gold);}
-
-/* ── SECTION BASE ── */
 section{padding:100px 56px;}
-.sec-tag{
-  font-size:9px;letter-spacing:0.26em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:56px;
-  display:flex;align-items:center;gap:14px;
-}
+.sec-tag{font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:56px;display:flex;align-items:center;gap:14px;}
 .sec-tag::after{content:'';flex:1;height:1px;background:var(--rule);}
-h2.sec-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(52px,7vw,100px);
-  line-height:0.9;letter-spacing:0.02em;
-  margin-bottom:56px;
-}
+h2.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,100px);line-height:0.9;letter-spacing:0.02em;margin-bottom:56px;}
 h2.sec-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);}
-
-/* ── SERVICES ── */
 .svc-list{border-top:1px solid var(--rule);}
-.svc-row{
-  display:grid;grid-template-columns:80px 1fr 1fr auto;
-  align-items:start;gap:48px;
-  padding:32px 0;
-  border-bottom:1px solid var(--rule);
-  cursor:default;
-  transition:padding-left 0.3s;
-}
+.svc-row{display:grid;grid-template-columns:80px 1fr 1fr auto;align-items:start;gap:48px;padding:32px 0;border-bottom:1px solid var(--rule);cursor:default;transition:padding-left 0.3s;}
 .svc-row:hover{padding-left:16px;background:rgba(200,169,110,0.02);}
 .svc-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:rgba(240,235,228,0.07);line-height:1;padding-top:4px;}
 .svc-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.05em;}
@@ -239,94 +104,50 @@ h2.sec-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:v
 .svc-price{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-align:right;white-space:nowrap;padding-top:6px;}
 .svc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
 .svc-tag{font-size:8px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--rule);color:var(--dimmer);}
-
-/* ── WORK GRID ── */
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);}
-.work-card{
-  background:var(--black);padding:44px;
-  transition:background 0.25s;position:relative;overflow:hidden;
-}
-.work-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;
-}
+.work-card{background:var(--black);padding:44px;transition:background 0.25s;position:relative;overflow:hidden;}
+.work-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s;}
 .work-card:hover{background:var(--black2);}
 .work-card:hover::before{transform:scaleY(1);}
 .wc-client{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:0.06em;margin-bottom:6px;}
 .wc-sector{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
 .wc-desc{font-size:10px;line-height:1.9;color:var(--dimmer);margin-bottom:16px;}
 .wc-result{font-size:11px;color:var(--white);border-left:1px solid var(--gold);padding-left:14px;line-height:1.6;}
-
-/* ── PRICING ── */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px;}
 .price-card{background:var(--black);padding:44px;position:relative;overflow:hidden;}
 .price-card.featured{background:var(--black2);}
 .price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);}
-.pc-badge{
-  display:inline-block;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;
-  padding:4px 12px;background:var(--gold);color:var(--black);margin-bottom:20px;
-}
+.pc-badge{display:inline-block;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;padding:4px 12px;background:var(--gold);color:var(--black);margin-bottom:20px;}
 .featured .pc-badge{background:var(--teal);color:var(--black);}
 .pc-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.06em;margin-bottom:10px;}
-.pc-rate{
-  font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;
-  color:var(--gold);letter-spacing:0.03em;margin-bottom:4px;
-}
+.pc-rate{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;color:var(--gold);letter-spacing:0.03em;margin-bottom:4px;}
 .pc-rate span{font-size:16px;font-family:'DM Mono',monospace;font-weight:300;color:var(--dimmer);}
 .pc-period{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--dimmer);margin-bottom:22px;}
 .pc-hr{height:1px;background:var(--rule);margin:20px 0;}
 .pc-feat{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
 .pc-feat-item{display:flex;align-items:flex-start;gap:8px;font-size:10px;line-height:1.6;color:var(--dimmer);}
 .pc-feat-item::before{content:'→';color:var(--gold);flex-shrink:0;}
-.pc-cta{
-  display:block;text-align:center;padding:12px;
-  background:var(--rule);color:var(--white);
-  font-size:8px;letter-spacing:0.18em;text-transform:uppercase;
-  text-decoration:none;transition:all 0.2s;border:1px solid var(--rule);
-}
+.pc-cta{display:block;text-align:center;padding:12px;background:var(--rule);color:var(--white);font-size:8px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:1px solid var(--rule);}
 .pc-cta:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
 .featured .pc-cta{background:var(--gold);color:var(--black);border-color:var(--gold);}
 .featured .pc-cta:hover{background:var(--white);}
-
-/* ── PROCESS ── */
 .process-grid{display:grid;grid-template-columns:repeat(5,1fr);margin-top:56px;border:1px solid var(--rule);}
 .proc{padding:32px 24px;border-right:1px solid var(--rule);position:relative;transition:background 0.2s;}
 .proc:last-child{border-right:none;}
 .proc:hover{background:var(--black2);}
-.proc-arrow{
-  position:absolute;top:32px;right:-13px;
-  width:26px;height:26px;border:1px solid var(--rule);background:var(--black);
-  display:flex;align-items:center;justify-content:center;z-index:1;
-  font-size:9px;color:var(--gold);
-}
+.proc-arrow{position:absolute;top:32px;right:-13px;width:26px;height:26px;border:1px solid var(--rule);background:var(--black);display:flex;align-items:center;justify-content:center;z-index:1;font-size:9px;color:var(--gold);}
 .proc:last-child .proc-arrow{display:none;}
 .proc-n{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:rgba(240,235,228,0.06);margin-bottom:14px;}
 .proc-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.05em;margin-bottom:8px;}
 .proc-desc{font-size:9px;line-height:1.8;color:var(--dimmer);}
 .proc-time{display:inline-block;margin-top:10px;font-size:7px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--rule);color:var(--gold);}
-
-/* ── DEMO BAND ── */
-.demo-band{
-  background:var(--gold);padding:64px 56px;
-  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
-}
-.demo-h{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(36px,5vw,64px);
-  line-height:0.95;letter-spacing:0.03em;color:var(--black);
-}
+.demo-band{background:var(--gold);padding:64px 56px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.demo-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:0.95;letter-spacing:0.03em;color:var(--black);}
 .demo-h em{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(9,9,9,0.5);}
 .demo-sub{font-size:10px;line-height:1.7;color:rgba(9,9,9,0.6);margin-top:10px;max-width:520px;}
-.demo-cta{
-  display:inline-block;padding:18px 40px;
-  background:var(--black);color:var(--white);
-  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
-  text-decoration:none;transition:all 0.2s;white-space:nowrap;
-}
+.demo-cta{display:inline-block;padding:18px 40px;background:var(--black);color:var(--white);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
 .demo-cta:hover{background:var(--black3);color:var(--gold);}
 .demo-meta{font-size:8px;letter-spacing:0.1em;color:rgba(9,9,9,0.5);text-align:right;margin-top:10px;line-height:1.7;}
-
-/* ── STACK ── */
 .stack-bg{background:var(--black2);}
 .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:56px;}
 .stack-cat{background:var(--black);padding:32px;}
@@ -334,15 +155,11 @@ h2.sec-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:v
 .s-tags{display:flex;flex-wrap:wrap;gap:5px;}
 .s-tag{font-size:9px;letter-spacing:0.08em;padding:4px 10px;border:1px solid var(--rule);color:var(--dimmer);transition:all 0.15s;cursor:default;}
 .s-tag:hover{border-color:var(--gold);color:var(--gold);}
-
-/* ── FAQ ── */
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:56px;}
 .faq-item{background:var(--black);padding:28px 32px;cursor:default;transition:background 0.15s;}
 .faq-item:hover{background:var(--black2);}
 .faq-q{font-size:11px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.5;}
 .faq-a{font-size:9px;line-height:1.9;color:var(--dimmer);}
-
-/* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .about-text{font-size:11px;line-height:2.1;color:var(--dimmer);}
 .about-text strong{color:var(--white);font-weight:400;}
@@ -352,16 +169,10 @@ h2.sec-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:v
 .about-photo-wrap{position:relative;aspect-ratio:3/4;overflow:hidden;}
 .about-photo{width:100%;height:100%;object-fit:cover;object-position:center top;filter:sepia(12%) contrast(1.1);}
 .about-photo-frame{position:absolute;inset:0;border:1px solid rgba(200,169,110,0.25);transform:translate(10px,10px);pointer-events:none;}
-
-/* ── CONTACT ── */
 .contact-section{background:var(--white);color:var(--black);padding:100px 56px;}
 .contact-section .sec-tag{color:rgba(9,9,9,0.4);}
 .contact-section .sec-tag::after{background:rgba(9,9,9,0.1);}
-h2.contact-big{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(48px,8vw,120px);
-  line-height:0.85;color:var(--black);margin-bottom:44px;
-}
+h2.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,120px);line-height:0.85;color:var(--black);margin-bottom:44px;}
 h2.contact-big em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold2);}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
 .contact-info{font-size:12px;line-height:2;color:rgba(9,9,9,0.55);}
@@ -372,60 +183,30 @@ h2.contact-big em{font-family:'Cormorant Garamond',serif;font-style:italic;color
 .c-label{font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(9,9,9,0.4);margin-bottom:4px;}
 .c-val{font-size:12px;line-height:1.7;color:rgba(9,9,9,0.7);}
 .c-val a{color:rgba(9,9,9,0.8);text-decoration:none;border-bottom:1px solid rgba(9,9,9,0.15);}
-.btn-dark{
-  display:inline-block;padding:16px 40px;
-  background:var(--black);color:var(--white);
-  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
-  text-decoration:none;transition:background 0.2s;
-}
+.btn-dark{display:inline-block;padding:16px 40px;background:var(--black);color:var(--white);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;}
 .btn-dark:hover{background:var(--gold2);}
-.contact-photo{
-  width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;
-  border:2px solid rgba(200,169,110,0.3);margin-right:14px;
-}
+.contact-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(200,169,110,0.3);margin-right:14px;}
 .contact-person{display:flex;align-items:center;margin-top:28px;padding-top:28px;border-top:1px solid rgba(9,9,9,0.08);}
 .cp-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--black);}
 .cp-role{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(9,9,9,0.4);margin-top:2px;}
-
-/* FORM */
 .form-title{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.05em;margin-bottom:28px;}
 .f-group{margin-bottom:14px;}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
 .f-label{font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(9,9,9,0.45);display:block;margin-bottom:5px;}
-.f-input,.f-sel,.f-area{
-  width:100%;padding:12px 0;
-  border:none;border-bottom:1px solid rgba(9,9,9,0.15);
-  background:transparent;
-  font-family:'DM Mono',monospace;font-size:11px;color:var(--black);
-  outline:none;transition:border-color 0.2s;
-}
+.f-input,.f-sel,.f-area{width:100%;padding:12px 0;border:none;border-bottom:1px solid rgba(9,9,9,0.15);background:transparent;font-family:'DM Mono',monospace;font-size:11px;color:var(--black);outline:none;transition:border-color 0.2s;}
 .f-input:focus,.f-sel:focus,.f-area:focus{border-color:var(--gold2);}
 .f-area{resize:none;height:80px;}
-.f-submit{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--black);color:var(--white);
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;
-  padding:14px 32px;border:none;cursor:pointer;margin-top:18px;transition:background 0.2s;
-}
+.f-submit{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--white);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;margin-top:18px;transition:background 0.2s;}
 .f-submit:hover{background:var(--gold2);}
 .f-submit svg{width:14px;height:14px;}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--black);padding:20px 56px 20px;
-  border-top:1px solid var(--rule);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-}
+footer{background:var(--black);padding:20px 56px 20px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
 .ft-copy{font-size:8px;letter-spacing:0.1em;color:rgba(240,235,228,0.18);}
 .ft-r{font-size:8px;color:rgba(240,235,228,0.12);}
-
-/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.85s,transform 0.85s;}
 .reveal.v{opacity:1;transform:none;}
-
 @media(max-width:960px){
   nav{padding:18px 24px;}
   .hero{grid-template-columns:1fr;}
@@ -443,7 +224,6 @@ footer{
   .client-strip{padding:16px 24px;flex-wrap:wrap;}
   footer{padding:20px 24px;}
 }
-
 .hero-scene{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease-in-out;}
 .hero-scene.active{opacity:1;}
 .scene-dot{width:6px;height:6px;border-radius:50%;background:rgba(200,169,110,0.25);cursor:pointer;transition:background 0.3s;}
@@ -474,7 +254,7 @@ footer{
   <div class="hero-left">
     <div class="hero-eyebrow">Enterprise data consulting · Paris, France</div>
     <h1 class="hero-title">
-      REAL<br>SOLU<em>tions.</em>
+      BI<br>VON<em>ix.</em>
     </h1>
     <p class="hero-desc">
       We build the data infrastructure, governance platforms, and executive intelligence systems that <strong>tier-1 organisations</strong> rely on to make decisions worth millions. <strong>Nine years. Five industries. Zero fluff.</strong>
@@ -486,15 +266,10 @@ footer{
   </div>
   <div class="hero-right">
     <div class="hero-artwork" id="heroArt" style="width:100%;height:100%;position:relative;overflow:hidden;background:#090909;">
-      
-      <!-- SCENE CONTAINER — cycles through 4 scenes every 5s -->
       <div id="sceneWrap" style="position:absolute;inset:0;">
-        
-        <!-- SCENE 1: Gilded Grid — Core Identity / Logo Concept -->
+        <!-- SCENE 1 -->
         <svg id="s1" class="hero-scene active" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background texture grid -->
           <rect width="600" height="800" fill="#090909"/>
-          <!-- Fine grid lines -->
           <g stroke="#c8a96e" stroke-width="0.3" opacity="0.08">
             <line x1="0" y1="100" x2="600" y2="100"/><line x1="0" y1="200" x2="600" y2="200"/>
             <line x1="0" y1="300" x2="600" y2="300"/><line x1="0" y1="400" x2="600" y2="400"/>
@@ -504,152 +279,72 @@ footer{
             <line x1="300" y1="0" x2="300" y2="800"/><line x1="400" y1="0" x2="400" y2="800"/>
             <line x1="500" y1="0" x2="500" y2="800"/>
           </g>
-          <!-- The precision rule line — 1px gold slice -->
           <line x1="0" y1="390" x2="600" y2="390" stroke="#c8a96e" stroke-width="1" opacity="0.7"/>
-          <!-- RS Monogram — centre stage -->
-          <!-- R: architectural Bebas Neue style (manual geometric) -->
-          <g transform="translate(120, 240)">
-            <!-- R glyph constructed geometrically -->
+          <g transform="translate(100, 240)">
             <rect x="0" y="0" width="18" height="200" fill="#f0ebe4" opacity="0.92"/>
             <rect x="0" y="0" width="100" height="18" fill="#f0ebe4" opacity="0.92"/>
             <rect x="0" y="90" width="90" height="18" fill="#f0ebe4" opacity="0.92"/>
             <rect x="82" y="0" width="18" height="108" rx="36" fill="#f0ebe4" opacity="0.92"/>
-            <!-- R leg diagonal -->
             <polygon points="18,108 80,108 150,200 125,200 60,118 18,118" fill="#f0ebe4" opacity="0.92"/>
           </g>
-          <!-- S: fluid Cormorant italic style (path) -->
-          <g transform="translate(300, 240)">
-            <path d="M80,0 C130,0 160,30 160,60 C160,95 120,115 80,130 C40,145 0,168 0,205 C0,240 35,270 90,270 C130,270 158,255 175,240"
-              stroke="#c8a96e" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.95"/>
-            <path d="M80,0 C130,0 160,30 160,60 C160,95 120,115 80,130 C40,145 0,168 0,205 C0,240 35,270 90,270 C130,270 158,255 175,240"
-              stroke="#f0ebe4" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <!-- B letter -->
+          <g transform="translate(290, 240)">
+            <rect x="0" y="0" width="18" height="200" fill="#c8a96e" opacity="0.95"/>
+            <rect x="0" y="0" width="90" height="18" fill="#c8a96e" opacity="0.95"/>
+            <rect x="0" y="95" width="90" height="18" fill="#c8a96e" opacity="0.95"/>
+            <rect x="0" y="182" width="95" height="18" fill="#c8a96e" opacity="0.95"/>
+            <rect x="72" y="0" width="18" height="113" rx="30" fill="#c8a96e" opacity="0.95"/>
+            <rect x="72" y="95" width="18" height="105" rx="30" fill="#c8a96e" opacity="0.95"/>
           </g>
-          <!-- Gold horizontal accent under R -->
-          <rect x="120" y="456" width="180" height="2" fill="#c8a96e" opacity="0.9"/>
-          <!-- Decorative corner marks -->
+          <rect x="100" y="456" width="210" height="2" fill="#c8a96e" opacity="0.9"/>
           <g stroke="#c8a96e" stroke-width="1.5" opacity="0.4">
             <polyline points="20,20 20,50 50,50"/>
             <polyline points="580,20 550,20 550,50"/>
             <polyline points="20,780 20,750 50,750"/>
             <polyline points="580,780 550,780 550,750"/>
           </g>
-          <!-- Label -->
-          <text x="300" y="740" font-family="'DM Mono',monospace" font-size="9" fill="#c8a96e" opacity="0.5" text-anchor="middle" letter-spacing="4">GILDED GRID — IDENTITY</text>
-          <!-- Animated scan line -->
+          <text x="300" y="740" font-family="'DM Mono',monospace" font-size="9" fill="#c8a96e" opacity="0.5" text-anchor="middle" letter-spacing="4">BIVONIX — IDENTITY</text>
           <rect x="0" y="0" width="600" height="2" fill="#c8a96e" opacity="0.25">
             <animate attributeName="y" from="-2" to="802" dur="4s" repeatCount="indefinite"/>
           </rect>
         </svg>
-
-        <!-- SCENE 2: Star Schema — BI & Dashboard -->
+        <!-- SCENE 2 -->
         <svg id="s2" class="hero-scene" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
           <rect width="600" height="800" fill="#111111"/>
-          <!-- Subtle noise texture via fine dots -->
-          <g fill="#f0ebe4" opacity="0.02">
-            <circle cx="60" cy="80" r="1.5"/><circle cx="150" cy="40" r="1"/><circle cx="300" cy="120" r="1.5"/>
-            <circle cx="450" cy="60" r="1"/><circle cx="540" cy="100" r="1.5"/><circle cx="90" cy="200" r="1"/>
-            <circle cx="200" cy="250" r="1.5"/><circle cx="380" cy="180" r="1"/><circle cx="500" cy="220" r="1.5"/>
-          </g>
-          
-          <!-- STAR SCHEMA network — fact table centre, dimension nodes around -->
-          <!-- Gold filaments first (below nodes) -->
-          <!-- Fact to dim1 (top) -->
-          <line x1="300" y1="380" x2="300" y2="200" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/>
-          </line>
-          <!-- Fact to dim2 (top-right) -->
-          <line x1="300" y1="380" x2="460" y2="260" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite" begin="0.5s"/>
-          </line>
-          <!-- Fact to dim3 (right) -->
-          <line x1="300" y1="380" x2="510" y2="400" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
-          </line>
-          <!-- Fact to dim4 (bottom-right) -->
-          <line x1="300" y1="380" x2="440" y2="540" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite" begin="0.3s"/>
-          </line>
-          <!-- Fact to dim5 (bottom-left) -->
-          <line x1="300" y1="380" x2="160" y2="540" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.9s" repeatCount="indefinite" begin="0.8s"/>
-          </line>
-          <!-- Fact to dim6 (left) -->
-          <line x1="300" y1="380" x2="90" y2="400" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.1s" repeatCount="indefinite" begin="0.2s"/>
-          </line>
-          <!-- Fact to dim7 (top-left) -->
-          <line x1="300" y1="380" x2="140" y2="260" stroke="#c8a96e" stroke-width="1.5" opacity="0.6">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.6s" repeatCount="indefinite" begin="1.2s"/>
-          </line>
-          
-          <!-- Travelling data packets along lines -->
-          <circle r="3" fill="#0ea5b0" opacity="0.9">
-            <animateMotion dur="2.8s" repeatCount="indefinite" path="M300,380 L300,200"/>
-          </circle>
-          <circle r="2.5" fill="#c8a96e" opacity="0.8">
-            <animateMotion dur="3.2s" repeatCount="indefinite" begin="0.5s" path="M300,380 L460,260"/>
-          </circle>
-          <circle r="2.5" fill="#0ea5b0" opacity="0.8">
-            <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.9s" path="M300,380 L510,400"/>
-          </circle>
-          <circle r="2" fill="#c8a96e" opacity="0.7">
-            <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.3s" path="M300,380 L440,540"/>
-          </circle>
-          <circle r="2" fill="#0ea5b0" opacity="0.7">
-            <animateMotion dur="2.9s" repeatCount="indefinite" begin="0.6s" path="M300,380 L160,540"/>
-          </circle>
-          <circle r="2.5" fill="#c8a96e" opacity="0.8">
-            <animateMotion dur="3.1s" repeatCount="indefinite" begin="1s" path="M300,380 L90,400"/>
-          </circle>
-          <circle r="2" fill="#0ea5b0" opacity="0.7">
-            <animateMotion dur="2.6s" repeatCount="indefinite" begin="0.2s" path="M300,380 L140,260"/>
-          </circle>
-          
-          <!-- FACT TABLE — centre, glowing gold -->
+          <line x1="300" y1="380" x2="300" y2="200" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/></line>
+          <line x1="300" y1="380" x2="460" y2="260" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.2s" repeatCount="indefinite" begin="0.5s"/></line>
+          <line x1="300" y1="380" x2="510" y2="400" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/></line>
+          <line x1="300" y1="380" x2="440" y2="540" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite" begin="0.3s"/></line>
+          <line x1="300" y1="380" x2="160" y2="540" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.9s" repeatCount="indefinite" begin="0.8s"/></line>
+          <line x1="300" y1="380" x2="90" y2="400" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.1s" repeatCount="indefinite" begin="0.2s"/></line>
+          <line x1="300" y1="380" x2="140" y2="260" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.6s" repeatCount="indefinite" begin="1.2s"/></line>
+          <circle r="3" fill="#0ea5b0" opacity="0.9"><animateMotion dur="2.8s" repeatCount="indefinite" path="M300,380 L300,200"/></circle>
+          <circle r="2.5" fill="#c8a96e" opacity="0.8"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.5s" path="M300,380 L460,260"/></circle>
+          <circle r="2.5" fill="#0ea5b0" opacity="0.8"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.9s" path="M300,380 L510,400"/></circle>
           <rect x="242" y="322" width="116" height="116" fill="#111111" stroke="#c8a96e" stroke-width="2"/>
           <rect x="242" y="322" width="116" height="4" fill="#c8a96e" opacity="0.8"/>
           <text x="300" y="356" font-family="'DM Mono',monospace" font-size="8" fill="#c8a96e" text-anchor="middle" letter-spacing="2">FACT_TABLE</text>
           <text x="300" y="374" font-family="'DM Mono',monospace" font-size="7" fill="#f0ebe4" opacity="0.5" text-anchor="middle">TRANSACTIONS</text>
           <text x="300" y="390" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">116M rows · RLS</text>
           <text x="300" y="412" font-family="'DM Mono',monospace" font-size="6" fill="#0ea5b0" opacity="0.6" text-anchor="middle">✦ STAR SCHEMA</text>
-          
-          <!-- DIMENSION NODES -->
-          <!-- dim1: top — DATE -->
           <rect x="250" y="155" width="100" height="54" fill="#111111" stroke="#c8a96e" stroke-width="1" opacity="0.85"/>
           <text x="300" y="178" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DIM_DATE</text>
           <text x="300" y="193" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">Fiscal Year</text>
-          
-          <!-- dim2: top-right — ROUTE -->
           <rect x="410" y="220" width="100" height="54" fill="#111111" stroke="#c8a96e" stroke-width="1" opacity="0.85"/>
           <text x="460" y="243" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DIM_ROUTE</text>
           <text x="460" y="258" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">CDG–JFK</text>
-          
-          <!-- dim3: right — AIRLINE -->
           <rect x="470" y="365" width="92" height="54" fill="#111111" stroke="#c8a96e" stroke-width="1" opacity="0.85"/>
           <text x="516" y="388" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DIM_CARRIER</text>
           <text x="516" y="404" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">EK / QR / AF</text>
-          
-          <!-- dim4: bottom-right — CLASS -->
-          <rect x="395" y="520" width="96" height="54" fill="#111111" stroke="#0ea5b0" stroke-width="1" opacity="0.7"/>
-          <text x="443" y="543" font-family="'DM Mono',monospace" font-size="7" fill="#0ea5b0" text-anchor="middle" letter-spacing="1">DIM_CABIN</text>
-          <text x="443" y="558" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">Business / Eco</text>
-          
-          <!-- dim5: bottom-left — REGION -->
           <rect x="108" y="520" width="96" height="54" fill="#111111" stroke="#0ea5b0" stroke-width="1" opacity="0.7"/>
           <text x="156" y="543" font-family="'DM Mono',monospace" font-size="7" fill="#0ea5b0" text-anchor="middle" letter-spacing="1">DIM_REGION</text>
           <text x="156" y="558" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">EUR / AMER</text>
-          
-          <!-- dim6: left — STATUS -->
           <rect x="36" y="365" width="96" height="54" fill="#111111" stroke="#c8a96e" stroke-width="1" opacity="0.85"/>
           <text x="84" y="388" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DIM_STATUS</text>
           <text x="84" y="404" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">On-Time / Delay</text>
-          
-          <!-- dim7: top-left — PRODUCT -->
           <rect x="88" y="220" width="100" height="54" fill="#111111" stroke="#c8a96e" stroke-width="1" opacity="0.85"/>
           <text x="138" y="243" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DIM_PRODUCT</text>
           <text x="138" y="258" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">A350 / B777</text>
-          
-          <!-- MINI KPI badges — anomaly teal vs positive gold -->
           <g transform="translate(80, 660)">
             <rect width="100" height="46" fill="#111111" stroke="#c0392b" stroke-width="1" opacity="0.6"/>
             <rect width="100" height="2" fill="#c0392b" opacity="0.7"/>
@@ -668,96 +363,32 @@ footer{
             <text x="50" y="20" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle">✦ RASK</text>
             <text x="50" y="36" font-family="'DM Mono',monospace" font-size="10" fill="#f0ebe4" opacity="0.7" text-anchor="middle">€0.0842</text>
           </g>
-          
           <text x="300" y="745" font-family="'DM Mono',monospace" font-size="9" fill="#c8a96e" opacity="0.5" text-anchor="middle" letter-spacing="4">STAR SCHEMA — BI PLATFORM</text>
         </svg>
-
-        <!-- SCENE 3: Infrastructure Monolith — Data Engineering -->
+        <!-- SCENE 3 -->
         <svg id="s3" class="hero-scene" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
           <rect width="600" height="800" fill="#0d0d0d"/>
-          
-          <!-- Isometric grid base lines -->
-          <g stroke="#c8a96e" stroke-width="0.4" opacity="0.06">
-            <!-- horizontal iso lines -->
-            <line x1="0" y1="500" x2="300" y2="300"/><line x1="0" y1="550" x2="350" y2="300"/>
-            <line x1="0" y1="600" x2="400" y2="300"/><line x1="0" y1="650" x2="450" y2="300"/>
-            <line x1="0" y1="700" x2="500" y2="300"/><line x1="50" y1="750" x2="600" y2="300"/>
-            <line x1="100" y1="750" x2="600" y2="350"/><line x1="200" y1="750" x2="600" y2="450"/>
-            <line x1="300" y1="750" x2="600" y2="550"/><line x1="400" y1="750" x2="600" y2="650"/>
-          </g>
-          
-          <!-- ISOMETRIC BLOCKS — cloud infrastructure -->
-          <!-- Block 1: Databricks — tallest, left -->
           <g transform="translate(80, 280)">
-            <!-- top face -->
             <polygon points="80,0 160,40 80,80 0,40" fill="#1e1e1e" stroke="#c8a96e" stroke-width="1.2"/>
-            <!-- left face -->
             <polygon points="0,40 80,80 80,260 0,220" fill="#161616" stroke="#c8a96e" stroke-width="0.8"/>
-            <!-- right face -->
             <polygon points="80,80 160,40 160,220 80,260" fill="#1a1a1a" stroke="#c8a96e" stroke-width="0.8"/>
-            <!-- gold data stream left face -->
             <line x1="30" y1="80" x2="30" y2="220" stroke="#c8a96e" stroke-width="0.8" opacity="0.4"/>
-            <line x1="60" y1="90" x2="60" y2="230" stroke="#c8a96e" stroke-width="0.5" opacity="0.25"/>
-            <!-- flowing particle -->
-            <circle r="3" fill="#c8a96e" opacity="0.8">
-              <animate attributeName="cy" values="80;220;80" dur="3s" repeatCount="indefinite"/>
-              <animate attributeName="cx" values="30;30;30" dur="3s" repeatCount="indefinite"/>
-            </circle>
-            <!-- label on top -->
+            <circle r="3" fill="#c8a96e" opacity="0.8"><animate attributeName="cy" values="80;220;80" dur="3s" repeatCount="indefinite"/><animate attributeName="cx" values="30;30;30" dur="3s" repeatCount="indefinite"/></circle>
             <text x="80" y="36" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DATABRICKS</text>
           </g>
-          
-          <!-- Block 2: Snowflake — middle, medium height -->
           <g transform="translate(220, 340)">
             <polygon points="80,0 160,40 80,80 0,40" fill="#1e1e1e" stroke="#0ea5b0" stroke-width="1.2"/>
             <polygon points="0,40 80,80 80,200 0,160" fill="#161616" stroke="#0ea5b0" stroke-width="0.8"/>
             <polygon points="80,80 160,40 160,200 80,240" fill="#1a1a1a" stroke="#0ea5b0" stroke-width="0.8"/>
-            <line x1="30" y1="80" x2="30" y2="200" stroke="#0ea5b0" stroke-width="0.8" opacity="0.4"/>
-            <circle r="3" fill="#0ea5b0" opacity="0.8">
-              <animate attributeName="cy" values="80;200;80" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
-              <animate attributeName="cx" values="30;30;30" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
-            </circle>
+            <circle r="3" fill="#0ea5b0" opacity="0.8"><animate attributeName="cy" values="80;200;80" dur="2.5s" repeatCount="indefinite" begin="0.8s"/><animate attributeName="cx" values="30;30;30" dur="2.5s" repeatCount="indefinite" begin="0.8s"/></circle>
             <text x="80" y="36" font-family="'DM Mono',monospace" font-size="7" fill="#0ea5b0" text-anchor="middle" letter-spacing="1">SNOWFLAKE</text>
           </g>
-          
-          <!-- Block 3: Azure ADF — right, shorter -->
           <g transform="translate(360, 380)">
             <polygon points="80,0 160,40 80,80 0,40" fill="#1e1e1e" stroke="#c8a96e" stroke-width="1.2" opacity="0.8"/>
             <polygon points="0,40 80,80 80,160 0,120" fill="#161616" stroke="#c8a96e" stroke-width="0.8" opacity="0.6"/>
             <polygon points="80,80 160,40 160,160 80,200" fill="#1a1a1a" stroke="#c8a96e" stroke-width="0.8" opacity="0.6"/>
-            <circle r="2.5" fill="#c8a96e" opacity="0.7">
-              <animate attributeName="cy" values="80;160;80" dur="3.5s" repeatCount="indefinite" begin="0.4s"/>
-              <animate attributeName="cx" values="30;30;30" dur="3.5s" repeatCount="indefinite" begin="0.4s"/>
-            </circle>
             <text x="80" y="36" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">AZURE ADF</text>
           </g>
-          
-          <!-- dbt block — small, below Databricks -->
-          <g transform="translate(120, 490)">
-            <polygon points="50,0 100,25 50,50 0,25" fill="#181818" stroke="#c8a96e" stroke-width="1" opacity="0.7"/>
-            <polygon points="0,25 50,50 50,100 0,75" fill="#131313" stroke="#c8a96e" stroke-width="0.6" opacity="0.5"/>
-            <polygon points="50,50 100,25 100,100 50,125" fill="#161616" stroke="#c8a96e" stroke-width="0.6" opacity="0.5"/>
-            <text x="50" y="22" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" opacity="0.7" text-anchor="middle" letter-spacing="1">dbt</text>
-          </g>
-          
-          <!-- Connection pipes between blocks — gold streams -->
-          <line x1="240" y1="455" x2="300" y2="455" stroke="#c8a96e" stroke-width="2" opacity="0.5" stroke-dasharray="6 3">
-            <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite"/>
-          </line>
-          <line x1="380" y1="475" x2="440" y2="475" stroke="#0ea5b0" stroke-width="2" opacity="0.5" stroke-dasharray="6 3">
-            <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.2s" repeatCount="indefinite"/>
-          </line>
-          
-          <!-- Sepia overlay for gritty industrial feel -->
-          <rect width="600" height="800" fill="url(#sepiaGrad)" opacity="0.12"/>
-          <defs>
-            <linearGradient id="sepiaGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#8B6914"/>
-              <stop offset="100%" stop-color="#2D1B00"/>
-            </linearGradient>
-          </defs>
-          
-          <!-- Code snippets etched faintly -->
           <g font-family="'DM Mono',monospace" font-size="7" fill="#f0ebe4" opacity="0.12">
             <text x="30" y="700">SELECT fact.flight_id,</text>
             <text x="30" y="712">  dim_date.fiscal_yr,</text>
@@ -766,131 +397,38 @@ footer{
             <text x="30" y="748">JOIN dim_date ON fact.date_sk</text>
             <text x="30" y="760">WHERE rls_user = CURRENT_USER()</text>
           </g>
-          
           <text x="300" y="785" font-family="'DM Mono',monospace" font-size="9" fill="#c8a96e" opacity="0.5" text-anchor="middle" letter-spacing="4">INFRASTRUCTURE MONOLITH</text>
         </svg>
-
-        <!-- SCENE 4: Neural Steering Committee — Advisory AI -->
+        <!-- SCENE 4 -->
         <svg id="s4" class="hero-scene" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
           <rect width="600" height="800" fill="#0a0a0a"/>
-          
-          <!-- Boardroom table — perspective rectangle, dark editorial -->
-          <!-- Floor/table plane suggestion -->
-          <polygon points="60,480 540,480 480,640 120,640" fill="#141414" stroke="#f0ebe4" stroke-width="0.5" opacity="0.15"/>
-          <!-- Table surface highlight -->
-          <polygon points="80,484 520,484 462,634 138,634" fill="#111111" stroke="#c8a96e" stroke-width="0.5" opacity="0.2"/>
-          <!-- Glass reflection on table -->
-          <polygon points="100,490 400,490 380,610 120,610" fill="#0ea5b0" opacity="0.03"/>
-          
-          <!-- Chairs silhouettes -->
-          <g fill="#1a1a1a" stroke="#f0ebe4" stroke-width="0.5" opacity="0.3">
-            <!-- top chairs (far side of table) -->
-            <rect x="130" y="430" width="40" height="50" rx="2"/>
-            <rect x="195" y="425" width="40" height="55" rx="2"/>
-            <rect x="260" y="422" width="40" height="58" rx="2"/>
-            <rect x="325" y="422" width="40" height="58" rx="2"/>
-            <rect x="390" y="425" width="40" height="55" rx="2"/>
-          </g>
-          
-          <!-- CODE snippets etched into glass/table -->
-          <g font-family="'DM Mono',monospace" font-size="6.5" fill="#c8a96e" opacity="0.18" transform="skewX(-5)">
-            <text x="120" y="510">SELECT kpi, target, actual</text>
-            <text x="120" y="522">FROM exec_dashboard</text>
-            <text x="120" y="534">WHERE user_role = 'C_SUITE'</text>
-            <text x="120" y="546">AND rls_filter = TRUE</text>
-            <text x="200" y="570">model: dim_dates</text>
-            <text x="200" y="582">  materialized: table</text>
-            <text x="200" y="594">  grain: fiscal_week</text>
-          </g>
-          <g font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.08" transform="skewX(-4)">
-            <text x="130" y="610">ENOVIA → Databricks → PowerBI</text>
-            <text x="130" y="622">eBOM remediation: 80% complete</text>
-          </g>
-          
-          <!-- TEAL NEURAL NETWORK NODE — centrepiece, glowing -->
-          <!-- Outer glow rings -->
-          <circle cx="300" cy="280" r="120" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.08">
-            <animate attributeName="r" values="100;130;100" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.08;0.15;0.08" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="280" r="90" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.12">
-            <animate attributeName="r" values="80;100;80" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.12;0.2;0.12" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="280" r="60" fill="none" stroke="#0ea5b0" stroke-width="1.5" opacity="0.2">
-            <animate attributeName="r" values="55;70;55" dur="2.5s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Core node -->
-          <circle cx="300" cy="280" r="38" fill="#0ea5b0" opacity="0.12"/>
-          <circle cx="300" cy="280" r="28" fill="#0ea5b0" opacity="0.2"/>
-          <circle cx="300" cy="280" r="18" fill="#0ea5b0" opacity="0.5">
-            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Neural spokes -->
+          <circle cx="300" cy="280" r="120" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.08"><animate attributeName="r" values="100;130;100" dur="4s" repeatCount="indefinite"/></circle>
+          <circle cx="300" cy="280" r="60" fill="none" stroke="#0ea5b0" stroke-width="1.5" opacity="0.2"><animate attributeName="r" values="55;70;55" dur="2.5s" repeatCount="indefinite"/></circle>
+          <circle cx="300" cy="280" r="18" fill="#0ea5b0" opacity="0.5"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/></circle>
           <g stroke="#0ea5b0" stroke-width="1" opacity="0.4">
             <line x1="300" y1="280" x2="300" y2="160"/><line x1="300" y1="280" x2="190" y2="210"/>
-            <line x1="300" y1="280" x2="140" y2="290"/><line x1="300" y1="280" x2="190" y2="360"/>
-            <line x1="300" y1="280" x2="410" y2="210"/><line x1="300" y1="280" x2="460" y2="290"/>
-            <line x1="300" y1="280" x2="410" y2="360"/>
+            <line x1="300" y1="280" x2="140" y2="290"/><line x1="300" y1="280" x2="410" y2="210"/>
+            <line x1="300" y1="280" x2="460" y2="290"/>
           </g>
-          <!-- Neural sub-nodes -->
-          <circle cx="300" cy="160" r="8" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.5"/>
-          <circle cx="190" cy="210" r="7" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.4"/>
-          <circle cx="140" cy="290" r="6" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.35"/>
-          <circle cx="190" cy="360" r="7" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.4"/>
-          <circle cx="410" cy="210" r="7" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.4"/>
-          <circle cx="460" cy="290" r="6" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.35"/>
-          <circle cx="410" cy="360" r="7" fill="none" stroke="#0ea5b0" stroke-width="1" opacity="0.4"/>
-          <!-- Pulses along spokes -->
-          <circle r="3" fill="#0ea5b0" opacity="0.8">
-            <animateMotion dur="2s" repeatCount="indefinite" path="M300,280 L300,160"/>
-          </circle>
-          <circle r="2.5" fill="#c8a96e" opacity="0.7">
-            <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.6s" path="M300,280 L410,210"/>
-          </circle>
-          <circle r="2" fill="#0ea5b0" opacity="0.7">
-            <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s" path="M300,280 L460,290"/>
-          </circle>
-          
-          <!-- DATA ROADMAP DOCUMENT — single gold document on table -->
           <g transform="translate(310, 500)">
             <rect width="110" height="75" fill="#1a1500" stroke="#c8a96e" stroke-width="1.5"/>
             <rect width="110" height="5" fill="#c8a96e" opacity="0.9"/>
             <text x="55" y="22" font-family="'DM Mono',monospace" font-size="7" fill="#c8a96e" text-anchor="middle" letter-spacing="1">DATA ROADMAP</text>
             <text x="55" y="36" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.4" text-anchor="middle">Q1–Q4 2025</text>
-            <line x1="12" y1="46" x2="98" y2="46" stroke="#c8a96e" stroke-width="0.6" opacity="0.3"/>
             <text x="55" y="58" font-family="'DM Mono',monospace" font-size="6" fill="#f0ebe4" opacity="0.3" text-anchor="middle">Advisory Retainer</text>
             <text x="55" y="70" font-family="'DM Mono',monospace" font-size="6" fill="#c8a96e" opacity="0.5" text-anchor="middle">€800/month</text>
-            <!-- Document glow -->
-            <rect width="110" height="75" fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.4">
-              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
-            </rect>
           </g>
-          
-          <!-- Overhead light bar -->
-          <line x1="160" y1="100" x2="440" y2="100" stroke="#f0ebe4" stroke-width="1" opacity="0.08"/>
-          <rect x="155" y="95" width="290" height="8" fill="#f0ebe4" opacity="0.04"/>
-          
-          <!-- Grain film overlay suggestion via SVG noise -->
-          <filter id="grain2"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-          <rect width="600" height="800" filter="url(#grain2)" opacity="0.04"/>
-          
           <text x="300" y="760" font-family="'DM Mono',monospace" font-size="9" fill="#c8a96e" opacity="0.5" text-anchor="middle" letter-spacing="4">NEURAL STEERING COMMITTEE</text>
         </svg>
-
-      </div><!-- end sceneWrap -->
-      
-      <!-- Scene indicators -->
+      </div>
       <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;">
         <div class="scene-dot active" data-n="0"></div>
         <div class="scene-dot" data-n="1"></div>
         <div class="scene-dot" data-n="2"></div>
         <div class="scene-dot" data-n="3"></div>
       </div>
-      
-      <!-- Overlay same as before -->
       <div class="hero-overlay"></div>
-      <div class="hero-ghost-text">RS</div>
+      <div class="hero-ghost-text">BX</div>
     </div>
   </div>
   <div class="hero-rate">
@@ -1002,42 +540,12 @@ footer{
   <div class="sec-tag">Selected engagements</div>
   <h2 class="sec-title reveal">CLIENT<br><em>outcomes</em></h2>
   <div class="work-grid reveal">
-    <div class="work-card">
-      <div class="wc-client">Air France</div>
-      <div class="wc-sector">Aviation · Power BI · Team Lead · SQL Server DWH</div>
-      <div class="wc-desc">Built and led a 5-person BI team. Designed centralised Power BI ecosystem — SQL Server DWH, SSIS ETL, dimensional star schema — unifying flight ops, ticket sales, and CSAT data siloed across departments for years. RLS for executive, regional, and sales views.</div>
-      <div class="wc-result">Reporting: 10–15 days → real-time. Manual consolidation eliminated. 60% reporting cycle reduction.</div>
-    </div>
-    <div class="work-card">
-      <div class="wc-client">Atlas Copco</div>
-      <div class="wc-sector">Manufacturing · PLM · ENOVIA → Databricks → Power BI</div>
-      <div class="wc-desc">Owned full data pipeline across 15+ European product companies. Chaired weekly C-suite steering with CEO, CFO, CTO, Data Lead. Delivered SAP GEMS migration readiness platform covering all 9 use-case checks across CT entities.</div>
-      <div class="wc-result">80%+ PLM data quality defects resolved. SAP GEMS cut-over readiness delivered on schedule.</div>
-    </div>
-    <div class="work-card">
-      <div class="wc-client">AXA Insurance</div>
-      <div class="wc-sector">Insurance · Azure ETL · Compliance · Power BI</div>
-      <div class="wc-desc">Architected Azure Data Factory ETL and Power BI compliance platform. VBA-to-JSON automation pipeline restored real-time cyber threat and budget visibility inaccessible to senior European ops leadership.</div>
-      <div class="wc-result">Multi-day manual consolidation eliminated. Full real-time compliance restored immediately.</div>
-    </div>
-    <div class="work-card">
-      <div class="wc-client">Dior</div>
-      <div class="wc-sector">Luxury · Brand Intelligence · Power BI · RLS</div>
-      <div class="wc-desc">Owned global brand intelligence programme. Delivered governed Power BI counterfeit trend platform with RLS access controls — giving regional leadership precise visibility into IP enforcement priorities worldwide.</div>
-      <div class="wc-result">Platform adopted globally across all Dior brand operations for strategic IP enforcement decisions.</div>
-    </div>
-    <div class="work-card">
-      <div class="wc-client">Sanofi</div>
-      <div class="wc-sector">Pharma · MDM · IQVIA Governance · Global Sales</div>
-      <div class="wc-desc">Governed IQVIA vendor data quality protocols across multi-region MDM programme. Delivered Power BI KPI platform restoring commercial visibility for global sales leadership enabling faster market access decisions.</div>
-      <div class="wc-result">Commercial sales visibility restored globally. MDM governance framework embedded permanently.</div>
-    </div>
-    <div class="work-card">
-      <div class="wc-client">Advarra</div>
-      <div class="wc-sector">Clinical Research · Databricks · Snowflake · Sigma BI</div>
-      <div class="wc-desc">Directed Oracle SQL Server → Databricks cloud migration. Delivered 3 production Sigma BI reporting suites on Snowflake/dbt. Established dbt modelling standards, GitHub version control, and self-service governance for engineering squads.</div>
-      <div class="wc-result">Full cloud-native analytics stack. Legacy Oracle infrastructure completely eliminated.</div>
-    </div>
+    <div class="work-card"><div class="wc-client">Air France</div><div class="wc-sector">Aviation · Power BI · Team Lead · SQL Server DWH</div><div class="wc-desc">Built and led a 5-person BI team. Designed centralised Power BI ecosystem — SQL Server DWH, SSIS ETL, dimensional star schema — unifying flight ops, ticket sales, and CSAT data siloed across departments for years. RLS for executive, regional, and sales views.</div><div class="wc-result">Reporting: 10–15 days → real-time. Manual consolidation eliminated. 60% reporting cycle reduction.</div></div>
+    <div class="work-card"><div class="wc-client">Atlas Copco</div><div class="wc-sector">Manufacturing · PLM · ENOVIA → Databricks → Power BI</div><div class="wc-desc">Owned full data pipeline across 15+ European product companies. Chaired weekly C-suite steering with CEO, CFO, CTO, Data Lead. Delivered SAP GEMS migration readiness platform covering all 9 use-case checks across CT entities.</div><div class="wc-result">80%+ PLM data quality defects resolved. SAP GEMS cut-over readiness delivered on schedule.</div></div>
+    <div class="work-card"><div class="wc-client">AXA Insurance</div><div class="wc-sector">Insurance · Azure ETL · Compliance · Power BI</div><div class="wc-desc">Architected Azure Data Factory ETL and Power BI compliance platform. VBA-to-JSON automation pipeline restored real-time cyber threat and budget visibility inaccessible to senior European ops leadership.</div><div class="wc-result">Multi-day manual consolidation eliminated. Full real-time compliance restored immediately.</div></div>
+    <div class="work-card"><div class="wc-client">Dior</div><div class="wc-sector">Luxury · Brand Intelligence · Power BI · RLS</div><div class="wc-desc">Owned global brand intelligence programme. Delivered governed Power BI counterfeit trend platform with RLS access controls — giving regional leadership precise visibility into IP enforcement priorities worldwide.</div><div class="wc-result">Platform adopted globally across all Dior brand operations for strategic IP enforcement decisions.</div></div>
+    <div class="work-card"><div class="wc-client">Sanofi</div><div class="wc-sector">Pharma · MDM · IQVIA Governance · Global Sales</div><div class="wc-desc">Governed IQVIA vendor data quality protocols across multi-region MDM programme. Delivered Power BI KPI platform restoring commercial visibility for global sales leadership enabling faster market access decisions.</div><div class="wc-result">Commercial sales visibility restored globally. MDM governance framework embedded permanently.</div></div>
+    <div class="work-card"><div class="wc-client">Advarra</div><div class="wc-sector">Clinical Research · Databricks · Snowflake · Sigma BI</div><div class="wc-desc">Directed Oracle SQL Server → Databricks cloud migration. Delivered 3 production Sigma BI reporting suites on Snowflake/dbt. Established dbt modelling standards, GitHub version control, and self-service governance for engineering squads.</div><div class="wc-result">Full cloud-native analytics stack. Legacy Oracle infrastructure completely eliminated.</div></div>
   </div>
 </section>
 
@@ -1047,51 +555,9 @@ footer{
   <h2 class="sec-title reveal">TRANS<em>parent<br>pricing</em></h2>
   <p class="reveal" style="font-size:11px;color:var(--dimmer);max-width:560px;line-height:1.9;margin-top:-28px;">Three ways to work together. Every engagement includes full documentation and a 30-day support window at handover.</p>
   <div class="pricing-grid reveal">
-    <div class="price-card">
-      <div class="pc-badge">Sprint</div>
-      <div class="pc-name">Project Engagement</div>
-      <div class="pc-rate">€2<span>,500+</span></div>
-      <div class="pc-period">Fixed scope · 2–6 weeks</div>
-      <div class="pc-hr"></div>
-      <div class="pc-feat">
-        <div class="pc-feat-item">Dashboard build or data audit</div>
-        <div class="pc-feat-item">Fixed price SOW — no surprises</div>
-        <div class="pc-feat-item">Weekly progress check-ins</div>
-        <div class="pc-feat-item">Full handover documentation</div>
-        <div class="pc-feat-item">30-day post-delivery support</div>
-      </div>
-      <a href="#contact" class="pc-cta">Get a quote</a>
-    </div>
-    <div class="price-card featured">
-      <div class="pc-badge">Most popular</div>
-      <div class="pc-name">Day Rate Embedding</div>
-      <div class="pc-rate">€600 <span>/ day</span></div>
-      <div class="pc-period">~€75/hour · remote or on-site</div>
-      <div class="pc-hr" style="background:rgba(240,235,228,0.07);"></div>
-      <div class="pc-feat">
-        <div class="pc-feat-item">Flexible from 5-day to 12-month engagements</div>
-        <div class="pc-feat-item">Executive steering or technical delivery</div>
-        <div class="pc-feat-item">Weekly governance reporting included</div>
-        <div class="pc-feat-item">Remote &amp; on-site available across Europe</div>
-        <div class="pc-feat-item">Minimum commitment: 5 days</div>
-      </div>
-      <a href="#contact" class="pc-cta">Book a call</a>
-    </div>
-    <div class="price-card">
-      <div class="pc-badge">Advisory</div>
-      <div class="pc-name">Monthly Retainer</div>
-      <div class="pc-rate">€800<span>/mo</span></div>
-      <div class="pc-period">Strategic advisory · ongoing</div>
-      <div class="pc-hr"></div>
-      <div class="pc-feat">
-        <div class="pc-feat-item">2× structured monthly sessions</div>
-        <div class="pc-feat-item">Async Slack support included</div>
-        <div class="pc-feat-item">Data roadmap &amp; BI architecture</div>
-        <div class="pc-feat-item">PLM/ERP readiness guidance</div>
-        <div class="pc-feat-item">Cancel anytime, zero lock-in</div>
-      </div>
-      <a href="#contact" class="pc-cta">Start advisory</a>
-    </div>
+    <div class="price-card"><div class="pc-badge">Sprint</div><div class="pc-name">Project Engagement</div><div class="pc-rate">€2<span>,500+</span></div><div class="pc-period">Fixed scope · 2–6 weeks</div><div class="pc-hr"></div><div class="pc-feat"><div class="pc-feat-item">Dashboard build or data audit</div><div class="pc-feat-item">Fixed price SOW — no surprises</div><div class="pc-feat-item">Weekly progress check-ins</div><div class="pc-feat-item">Full handover documentation</div><div class="pc-feat-item">30-day post-delivery support</div></div><a href="#contact" class="pc-cta">Get a quote</a></div>
+    <div class="price-card featured"><div class="pc-badge">Most popular</div><div class="pc-name">Day Rate Embedding</div><div class="pc-rate">€600 <span>/ day</span></div><div class="pc-period">~€75/hour · remote or on-site</div><div class="pc-hr" style="background:rgba(240,235,228,0.07);"></div><div class="pc-feat"><div class="pc-feat-item">Flexible from 5-day to 12-month engagements</div><div class="pc-feat-item">Executive steering or technical delivery</div><div class="pc-feat-item">Weekly governance reporting included</div><div class="pc-feat-item">Remote &amp; on-site available across Europe</div><div class="pc-feat-item">Minimum commitment: 5 days</div></div><a href="#contact" class="pc-cta">Book a call</a></div>
+    <div class="price-card"><div class="pc-badge">Advisory</div><div class="pc-name">Monthly Retainer</div><div class="pc-rate">€800<span>/mo</span></div><div class="pc-period">Strategic advisory · ongoing</div><div class="pc-hr"></div><div class="pc-feat"><div class="pc-feat-item">2× structured monthly sessions</div><div class="pc-feat-item">Async Slack support included</div><div class="pc-feat-item">Data roadmap &amp; BI architecture</div><div class="pc-feat-item">PLM/ERP readiness guidance</div><div class="pc-feat-item">Cancel anytime, zero lock-in</div></div><a href="#contact" class="pc-cta">Start advisory</a></div>
   </div>
 </section>
 
@@ -1112,40 +578,11 @@ footer{
   <div class="sec-tag">How it works</div>
   <h2 class="sec-title reveal">THE PRO<em>cess</em></h2>
   <div class="process-grid reveal">
-    <div class="proc">
-      <div class="proc-arrow">→</div>
-      <div class="proc-n">01</div>
-      <div class="proc-name">Discovery</div>
-      <div class="proc-desc">30 minutes. We understand your data landscape, what's blocking you, and what success looks like. No pitch deck, no obligation.</div>
-      <div class="proc-time">30 min · Free</div>
-    </div>
-    <div class="proc">
-      <div class="proc-arrow">→</div>
-      <div class="proc-n">02</div>
-      <div class="proc-name">Scoping</div>
-      <div class="proc-desc">We map data sources, architecture, deliverables, and timeline. Clear SOW in your hands within 48 hours. Fixed scope or day-rate.</div>
-      <div class="proc-time">48–72 hrs</div>
-    </div>
-    <div class="proc">
-      <div class="proc-arrow">→</div>
-      <div class="proc-n">03</div>
-      <div class="proc-name">Delivery</div>
-      <div class="proc-desc">Weekly demos. Iterative builds. Executive reporting at every milestone. You see progress every week — no black box consulting.</div>
-      <div class="proc-time">Ongoing</div>
-    </div>
-    <div class="proc">
-      <div class="proc-arrow">→</div>
-      <div class="proc-n">04</div>
-      <div class="proc-name">UAT & Iterate</div>
-      <div class="proc-desc">UAT sessions with your business users. We refine until it matches exactly what your team needs in production. No extra charge.</div>
-      <div class="proc-time">1–2 cycles</div>
-    </div>
-    <div class="proc">
-      <div class="proc-n">05</div>
-      <div class="proc-name">Handover</div>
-      <div class="proc-desc">Full documentation, team training, 30-day support window. When we leave, your team owns it completely — no dependency on us.</div>
-      <div class="proc-time">30-day support</div>
-    </div>
+    <div class="proc"><div class="proc-arrow">→</div><div class="proc-n">01</div><div class="proc-name">Discovery</div><div class="proc-desc">30 minutes. We understand your data landscape, what's blocking you, and what success looks like. No pitch deck, no obligation.</div><div class="proc-time">30 min · Free</div></div>
+    <div class="proc"><div class="proc-arrow">→</div><div class="proc-n">02</div><div class="proc-name">Scoping</div><div class="proc-desc">We map data sources, architecture, deliverables, and timeline. Clear SOW in your hands within 48 hours. Fixed scope or day-rate.</div><div class="proc-time">48–72 hrs</div></div>
+    <div class="proc"><div class="proc-arrow">→</div><div class="proc-n">03</div><div class="proc-name">Delivery</div><div class="proc-desc">Weekly demos. Iterative builds. Executive reporting at every milestone. You see progress every week — no black box consulting.</div><div class="proc-time">Ongoing</div></div>
+    <div class="proc"><div class="proc-arrow">→</div><div class="proc-n">04</div><div class="proc-name">UAT & Iterate</div><div class="proc-desc">UAT sessions with your business users. We refine until it matches exactly what your team needs in production. No extra charge.</div><div class="proc-time">1–2 cycles</div></div>
+    <div class="proc"><div class="proc-n">05</div><div class="proc-name">Handover</div><div class="proc-desc">Full documentation, team training, 30-day support window. When we leave, your team owns it completely — no dependency on us.</div><div class="proc-time">30-day support</div></div>
   </div>
 </section>
 
@@ -1154,30 +591,10 @@ footer{
   <div class="sec-tag" style="border-bottom:none;">Technology</div>
   <h2 class="sec-title reveal">THE<br><em>stack</em></h2>
   <div class="stack-grid reveal">
-    <div class="stack-cat">
-      <div class="stack-cat-h">Business Intelligence</div>
-      <div class="s-tags">
-        <span class="s-tag">Power BI</span><span class="s-tag">Advanced DAX</span><span class="s-tag">RLS / OLS</span><span class="s-tag">Power Query</span><span class="s-tag">Sigma BI</span><span class="s-tag">Paginated Reports</span><span class="s-tag">Power BI Service</span>
-      </div>
-    </div>
-    <div class="stack-cat">
-      <div class="stack-cat-h">Data Engineering</div>
-      <div class="s-tags">
-        <span class="s-tag">Azure Data Factory</span><span class="s-tag">Databricks</span><span class="s-tag">dbt</span><span class="s-tag">Snowflake</span><span class="s-tag">SQL Server</span><span class="s-tag">SSIS</span><span class="s-tag">Python</span><span class="s-tag">GitHub</span>
-      </div>
-    </div>
-    <div class="stack-cat">
-      <div class="stack-cat-h">PLM & ERP</div>
-      <div class="s-tags">
-        <span class="s-tag">ENOVIA 3DEXPERIENCE</span><span class="s-tag">eBOM / mBOM</span><span class="s-tag">SAP GEMS</span><span class="s-tag">BPCS</span><span class="s-tag">ACT+</span><span class="s-tag">Change Orders</span>
-      </div>
-    </div>
-    <div class="stack-cat">
-      <div class="stack-cat-h">Methodology</div>
-      <div class="s-tags">
-        <span class="s-tag">Agile / Scrum</span><span class="s-tag">SAFe</span><span class="s-tag">Kimball DWH</span><span class="s-tag">Star Schema</span><span class="s-tag">PMO Governance</span><span class="s-tag">DirectQuery</span><span class="s-tag">Dataiku</span>
-      </div>
-    </div>
+    <div class="stack-cat"><div class="stack-cat-h">Business Intelligence</div><div class="s-tags"><span class="s-tag">Power BI</span><span class="s-tag">Advanced DAX</span><span class="s-tag">RLS / OLS</span><span class="s-tag">Power Query</span><span class="s-tag">Sigma BI</span><span class="s-tag">Paginated Reports</span><span class="s-tag">Power BI Service</span></div></div>
+    <div class="stack-cat"><div class="stack-cat-h">Data Engineering</div><div class="s-tags"><span class="s-tag">Azure Data Factory</span><span class="s-tag">Databricks</span><span class="s-tag">dbt</span><span class="s-tag">Snowflake</span><span class="s-tag">SQL Server</span><span class="s-tag">SSIS</span><span class="s-tag">Python</span><span class="s-tag">GitHub</span></div></div>
+    <div class="stack-cat"><div class="stack-cat-h">PLM & ERP</div><div class="s-tags"><span class="s-tag">ENOVIA 3DEXPERIENCE</span><span class="s-tag">eBOM / mBOM</span><span class="s-tag">SAP GEMS</span><span class="s-tag">BPCS</span><span class="s-tag">ACT+</span><span class="s-tag">Change Orders</span></div></div>
+    <div class="stack-cat"><div class="stack-cat-h">Methodology</div><div class="s-tags"><span class="s-tag">Agile / Scrum</span><span class="s-tag">SAFe</span><span class="s-tag">Kimball DWH</span><span class="s-tag">Star Schema</span><span class="s-tag">PMO Governance</span><span class="s-tag">DirectQuery</span><span class="s-tag">Dataiku</span></div></div>
   </div>
 </section>
 
@@ -1186,38 +603,14 @@ footer{
   <div class="sec-tag">Common questions</div>
   <h2 class="sec-title reveal">F<em>AQ</em></h2>
   <div class="faq-grid reveal">
-    <div class="faq-item">
-      <div class="faq-q">What's the minimum engagement size?</div>
-      <div class="faq-a">For day-rate work, the minimum is 5 days. For project-based scopes, work typically starts around €2,500. Discovery calls are always free — no minimum whatsoever.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Remote or on-site? How does that work?</div>
-      <div class="faq-a">Both. Most analytical and engineering work is done remotely. Governance-heavy engagements — C-suite steering, PLM migrations — may include on-site days at the standard €600/day rate. Based in Paris, available across Europe.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How quickly can you start?</div>
-      <div class="faq-a">Immediately. After discovery and scoping (48–72 hrs), work begins the same week. For longer programme embedding roles, start date is agreed as part of the SOW.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you sign NDAs before discovery calls?</div>
-      <div class="faq-a">Yes, always — before any substantive conversation. All client data is treated as strictly confidential. Dashboard demos shown use dummy data to demonstrate methodology without breaching NDA obligations.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What industries do you specialise in?</div>
-      <div class="faq-a">Aviation, Manufacturing & PLM, Insurance, Pharma, Luxury, and Clinical Research. Nine years of vertical-specific knowledge means zero learning curve — we already understand your data challenges.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I see a live dashboard demo before committing?</div>
-      <div class="faq-a">Absolutely — free 30-minute live demos showing real interactive platforms built for Air France, Atlas Copco, and Qatar Airways with dummy data. Use the contact form below to request one.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you offer fixed-price projects?</div>
-      <div class="faq-a">Yes. For well-defined scopes — a Power BI platform, a data architecture review, a PLM readiness assessment — we provide fixed-price quotes. Budget certainty before any commitment.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What's the retainer exactly, and can I cancel?</div>
-      <div class="faq-a">€800/month covers 2 structured sessions, async Slack access, and strategic advisory. Cancel with 30 days notice. No lock-in — designed for orgs that need executive-level guidance without a full-time hire.</div>
-    </div>
+    <div class="faq-item"><div class="faq-q">What's the minimum engagement size?</div><div class="faq-a">For day-rate work, the minimum is 5 days. For project-based scopes, work typically starts around €2,500. Discovery calls are always free — no minimum whatsoever.</div></div>
+    <div class="faq-item"><div class="faq-q">Remote or on-site? How does that work?</div><div class="faq-a">Both. Most analytical and engineering work is done remotely. Governance-heavy engagements — C-suite steering, PLM migrations — may include on-site days at the standard €600/day rate. Based in Paris, available across Europe.</div></div>
+    <div class="faq-item"><div class="faq-q">How quickly can you start?</div><div class="faq-a">Immediately. After discovery and scoping (48–72 hrs), work begins the same week. For longer programme embedding roles, start date is agreed as part of the SOW.</div></div>
+    <div class="faq-item"><div class="faq-q">Do you sign NDAs before discovery calls?</div><div class="faq-a">Yes, always — before any substantive conversation. All client data is treated as strictly confidential. Dashboard demos shown use dummy data to demonstrate methodology without breaching NDA obligations.</div></div>
+    <div class="faq-item"><div class="faq-q">What industries do you specialise in?</div><div class="faq-a">Aviation, Manufacturing & PLM, Insurance, Pharma, Luxury, and Clinical Research. Nine years of vertical-specific knowledge means zero learning curve — we already understand your data challenges.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I see a live dashboard demo before committing?</div><div class="faq-a">Absolutely — free 30-minute live demos showing real interactive platforms built for Air France, Atlas Copco, and Qatar Airways with dummy data. Use the contact form below to request one.</div></div>
+    <div class="faq-item"><div class="faq-q">Do you offer fixed-price projects?</div><div class="faq-a">Yes. For well-defined scopes — a Power BI platform, a data architecture review, a PLM readiness assessment — we provide fixed-price quotes. Budget certainty before any commitment.</div></div>
+    <div class="faq-item"><div class="faq-q">What's the retainer exactly, and can I cancel?</div><div class="faq-a">€800/month covers 2 structured sessions, async Slack access, and strategic advisory. Cancel with 30 days notice. No lock-in — designed for orgs that need executive-level guidance without a full-time hire.</div></div>
   </div>
 </section>
 
@@ -1228,7 +621,7 @@ footer{
     <div>
       <h2 class="sec-title" style="margin-bottom:36px;">WHO<br><em>we are</em></h2>
       <p class="about-text">
-        <strong>Real Solutions</strong> is an independent data consulting practice founded and run by <strong>Ankit Parihar</strong> — a Programme Manager and Data Consultant with <strong>9+ years</strong> of international enterprise consulting experience across six industries.<br><br>
+        <strong>Bivonix</strong> is an independent data consulting practice founded and run by <strong>Ankit Parihar</strong> — a Programme Manager and Data Consultant with <strong>9+ years</strong> of international enterprise consulting experience across six industries.<br><br>
         We've built BI platforms for airlines, governed PLM migrations for manufacturers, delivered compliance dashboards for insurers, brand intelligence tools for luxury houses, and cloud analytics migrations for clinical research organisations.<br><br>
         Based in <strong>Paris, France.</strong> MSc from <strong>Toulouse Business School</strong> (GPA 3.8, Top 1% worldwide). Microsoft PL-300 Power BI certified. 10-year French PR holder. Immediate availability.
       </p>
@@ -1258,7 +651,7 @@ footer{
       <h2 class="contact-big">LET'S<br>BUILD<br>SOME<em>thing<br>real.</em></h2>
       <div class="c-detail">
         <div class="c-label">Email</div>
-        <div class="c-val"><a href="mailto:parihara90@gmail.com">parihara90@gmail.com</a></div>
+        <div class="c-val"><a href="mailto:ankit@bivonix.com">ankit@bivonix.com</a></div>
       </div>
       <div class="c-detail">
         <div class="c-label">Phone</div>
@@ -1270,33 +663,24 @@ footer{
       </div>
       <div class="c-detail">
         <div class="c-label">Registration</div>
-        <div class="c-val">Real Solutions<br>SIRET 943 893 966 00011 · APE 7022Z</div>
+        <div class="c-val">Bivonix<br>SIRET 943 893 966 00011 · APE 7022Z</div>
       </div>
-      <a href="mailto:parihara90@gmail.com" class="btn-dark">Send a message →</a>
+      <a href="mailto:ankit@bivonix.com" class="btn-dark">Send a message →</a>
       <div class="contact-person">
         <img id="contactPhoto" class="contact-photo" alt="Ankit Parihar">
         <div>
           <div class="cp-name">Ankit Parihar</div>
-          <div class="cp-role">Founder · Lead Consultant · Real Solutions</div>
+          <div class="cp-role">Founder · Lead Consultant · Bivonix</div>
         </div>
       </div>
     </div>
     <div>
       <div class="form-title">Book a discovery call<br>or request a demo</div>
       <div class="f-row">
-        <div class="f-group">
-          <label class="f-label">Your name</label>
-          <input class="f-input" type="text" placeholder="Full name">
-        </div>
-        <div class="f-group">
-          <label class="f-label">Company</label>
-          <input class="f-input" type="text" placeholder="Organisation">
-        </div>
+        <div class="f-group"><label class="f-label">Your name</label><input class="f-input" type="text" placeholder="Full name"></div>
+        <div class="f-group"><label class="f-label">Company</label><input class="f-input" type="text" placeholder="Organisation"></div>
       </div>
-      <div class="f-group">
-        <label class="f-label">Business email</label>
-        <input class="f-input" type="email" placeholder="you@company.com">
-      </div>
+      <div class="f-group"><label class="f-label">Business email</label><input class="f-input" type="email" placeholder="you@company.com"></div>
       <div class="f-group">
         <label class="f-label">What are you looking for?</label>
         <select class="f-sel">
@@ -1311,10 +695,7 @@ footer{
           <option>Day-rate engagement</option>
         </select>
       </div>
-      <div class="f-group">
-        <label class="f-label">Tell us about your challenge</label>
-        <textarea class="f-area" placeholder="What data problem are you trying to solve? Timeline, budget, anything relevant..."></textarea>
-      </div>
+      <div class="f-group"><label class="f-label">Tell us about your challenge</label><textarea class="f-area" placeholder="What data problem are you trying to solve? Timeline, budget, anything relevant..."></textarea></div>
       <button class="f-submit" onclick="this.innerHTML='Sent ✓';this.style.background='#16a34a';">
         Send message
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
@@ -1326,51 +707,40 @@ footer{
 <!-- FOOTER -->
 <footer>
   <div id="footerLogo"></div>
-  <div class="ft-copy">© 2025 Real Solutions — Ankit Parihar. All rights reserved. · SIRET 943 893 966 00011 · real-solutions.fr</div>
+  <div class="ft-copy">© 2025 Bivonix — Ankit Parihar. All rights reserved. · SIRET 943 893 966 00011 · bivonix.com</div>
   <div class="ft-r">Paris, France · Enterprise Data Consulting</div>
 </footer>
 
 <script>
-// ── LOGO — built by a 47-year brand designer ──
-// The concept: Two overlapping hexagonal nodes — a data mesh / network mark.
-// R·S hidden in the negative space geometry. Gold accent stroke. .fr badge corner.
-// Wordmark: Bebas Neue caps + Cormorant italic for "solutions" — authoritative yet refined.
 function buildLogo(size, light) {
   const txt = light ? '#090909' : '#f0ebe4';
   const sub = light ? 'rgba(9,9,9,0.4)' : 'rgba(240,235,228,0.4)';
   const h = size;
   const w = h * 5.2;
   return `<svg width="${w}" height="${h}" viewBox="0 0 208 40" xmlns="http://www.w3.org/2000/svg">
-  <!-- Mark: two overlapping data-node hexagons -->
   <g>
     <polygon points="16,4 27,8 27,22 16,26 5,22 5,8" fill="none" stroke="${txt}" stroke-width="1.2" opacity="0.15"/>
     <polygon points="22,8 33,12 33,26 22,30 11,26 11,12" fill="none" stroke="#c8a96e" stroke-width="1.2" opacity="0.6"/>
-    <!-- inner cross — hidden RS node -->
     <line x1="16" y1="14" x2="22" y2="14" stroke="#c8a96e" stroke-width="1.4"/>
     <line x1="16" y1="20" x2="22" y2="20" stroke="#c8a96e" stroke-width="1.4" opacity="0.5"/>
     <circle cx="16" cy="17" r="2.2" fill="#c8a96e"/>
     <circle cx="22" cy="17" r="1.4" fill="${txt}" opacity="0.6"/>
   </g>
-  <!-- Wordmark -->
-  <text x="40" y="26" font-family="'Bebas Neue',sans-serif" font-size="22" letter-spacing="2" fill="${txt}">REAL</text>
-  <text x="40" y="36" font-family="'Cormorant Garamond',serif" font-size="12" font-style="italic" letter-spacing="1" fill="${sub}">solutions</text>
-  <!-- Gold underline accent below REAL -->
-  <rect x="40" y="28" width="50" height="1.2" fill="#c8a96e" opacity="0.8"/>
-  <!-- .fr badge -->
-  <rect x="188" y="10" width="18" height="14" rx="1.5" fill="#c8a96e"/>
-  <text x="197" y="21" font-family="'DM Mono',monospace" font-size="7" font-weight="400" fill="#090909" text-anchor="middle" letter-spacing="0.5">.fr</text>
+  <text x="40" y="26" font-family="'Bebas Neue',sans-serif" font-size="22" letter-spacing="2" fill="${txt}">BIVONIX</text>
+  <text x="40" y="36" font-family="'Cormorant Garamond',serif" font-size="12" font-style="italic" letter-spacing="1" fill="${sub}">enterprise data</text>
+  <rect x="40" y="28" width="68" height="1.2" fill="#c8a96e" opacity="0.8"/>
+  <rect x="178" y="10" width="28" height="14" rx="1.5" fill="#c8a96e"/>
+  <text x="192" y="21" font-family="'DM Mono',monospace" font-size="7" font-weight="400" fill="#090909" text-anchor="middle" letter-spacing="0.5">.com</text>
 </svg>`;
 }
 
 document.getElementById('navLogo').innerHTML = buildLogo(40, false);
 document.getElementById('footerLogo').innerHTML = buildLogo(32, false);
 
-// ── PHOTO ──
-const photo = 'data:image/jpeg;base64,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';
+const photo = 'data:image/jpeg;base64,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';
 document.getElementById('aboutPhoto').src = photo;
 document.getElementById('contactPhoto').src = photo;
 
-// ── CURSOR ──
 const cur = document.getElementById('cur');
 const ring = document.getElementById('ring');
 document.addEventListener('mousemove', e => {
@@ -1392,13 +762,11 @@ document.querySelectorAll('a,button,.svc-row,.work-card,.faq-item,.price-card').
   });
 });
 
-// ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(en => {
   en.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
 }, { threshold: 0.06 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Scene cycling
 var scenes = document.querySelectorAll('.hero-scene');
 var dots = document.querySelectorAll('.scene-dot');
 var curr = 0;
@@ -1411,7 +779,6 @@ function goScene(n) {
 }
 dots.forEach(function(d){ d.addEventListener('click', function(){ goScene(+this.dataset.n); clearInterval(timer); }); });
 var timer = setInterval(function(){ goScene((curr+1)%4); }, 5000);
-
 </script>
 </body>
 </html>
